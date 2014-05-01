@@ -43,6 +43,7 @@
     NSMutableArray *_letterViews;
 }
 
+#pragma mark - Initialization -
 
 -(void)awakeFromNib
 {
@@ -83,6 +84,8 @@
     //[_dataBase logAllWords];
 }
 
+#pragma mark - Callbacks and button selectors -
+
 - (void)controlTextDidChange:(NSNotification *)notification {
     
     // Clear all letter view bg colors
@@ -119,7 +122,7 @@
         
     } while (view != _firstLetterView);
     
-    NSLog(@"%@", letterString);
+    //NSLog(@"%@", letterString);
     
     Puzzle *puzzle = [Puzzle puzzleWithString:letterString width:4 height:4];
     
@@ -154,8 +157,67 @@
 
 - (IBAction)removeWordSelected:(id)sender
 {
-    [_dataBase removeWord:[_wordField stringValue]];
+    if ([_dataBase removeWord:[_wordField stringValue]]) {
+        _infoField.stringValue = [NSString stringWithFormat:@"Removed word '%@'", _wordField.stringValue];
+    } else {
+        _infoField.stringValue = [NSString stringWithFormat:@"Could not remove word '%@', not in database", _wordField.stringValue];
+    }
 }
+
+- (IBAction)openFileSelected:(id)sender
+{
+    // Create file query panel
+    NSOpenPanel *panel = [NSOpenPanel openPanel];
+    [panel setCanChooseFiles:YES];
+    [panel setCanChooseDirectories:NO];
+    [panel setAllowsMultipleSelection:YES];
+    
+    NSInteger clicked = [panel runModal];
+    
+    if (clicked == NSFileHandlingPanelOKButton) {
+        for (NSURL *url in [panel URLs]) {
+            // load words from text files
+            NSString *path = [url path];
+            
+            // Simple check for file extension
+            // TODO: proper check of file type
+            if (!!![[path pathExtension] isCaseInsensitiveLike:@"txt"]) {
+                _infoField.stringValue = [NSString stringWithFormat:@"Cannot load %@, not a txt file.", [path lastPathComponent]];
+                continue;
+            }
+            
+            // Load words from file
+            [self loadWordsFromFilePath:path];
+        }
+    }
+}
+
+- (IBAction)clearWordListSelected:(id)sender
+{
+    // Clear the list
+    uint32 removed = [_dataBase removeAllWords];
+    
+    _infoField.stringValue = [NSString stringWithFormat:@"Removed %u words", removed];
+}
+
+- (IBAction)saveToFileSelected:(id)sender
+{
+    NSSavePanel *save = [NSSavePanel savePanel];
+    
+    NSInteger result = [save runModal];
+    
+    if (result == NSOKButton){
+        NSURL *selectedFile = save.URL;
+        if ([self saveWordsToFilePath:[selectedFile path]]) {
+            _infoField.stringValue = [NSString stringWithFormat:@"Saved %@", [selectedFile lastPathComponent]];
+        } else {
+            _infoField.stringValue = [NSString stringWithFormat:@"Failed to save %@", [selectedFile lastPathComponent]];
+        }
+    }
+
+}
+
+#pragma mark - Table handling -
 
 - (NSInteger) numberOfRowsInTableView:(NSTableView *)aTableView
 {
@@ -206,6 +268,8 @@
     }
 }
 
+#pragma mark - File handling -
+
 - (BOOL) loadWordsFromFilePath:(NSString*)path
 {
     // Read file to nsdata
@@ -250,4 +314,25 @@
 
     return YES;
 }
+
+- (BOOL) saveWordsToFilePath:(NSString*) path
+{
+    NSArray *words = [_dataBase wordList];
+    
+    NSMutableString *string = [NSMutableString stringWithFormat:@""];
+    
+    for (NSString* word in words) {
+        [string appendFormat:@"%@\n", word];
+    }
+    
+    NSError *error = nil;
+    BOOL success = [string writeToFile:path atomically:YES encoding:NSUTF8StringEncoding error:&error];
+    
+    /*if (error != nil) {
+        _infoField.stringValue = [NSString stringWithFormat:@"Error writing file: %@", error.localizedDescription];
+    }*/
+    
+    return success;
+}
+
 @end

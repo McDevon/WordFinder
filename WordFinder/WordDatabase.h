@@ -49,9 +49,13 @@
 @interface WordDatabase : NSObject
 
 - (int) addWord:(NSString*)word;
-- (void) removeWord:(NSString*)word;
+- (BOOL) removeWord:(NSString*)word;
 
 - (NSArray*) solutionsForPuzzle:(Puzzle*)puzzle;
+
+- (NSArray*) wordList;
+
+- (uint32) removeAllWords;
 
 - (void) logAllWords;
 

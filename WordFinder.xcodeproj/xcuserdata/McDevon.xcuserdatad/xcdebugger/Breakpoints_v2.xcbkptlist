@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordFinder/Display.m"
-            timestampString = "420627081.076726"
+            timestampString = "420629671.089375"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
+            startingLineNumber = "252"
+            endingLineNumber = "252"
             landmarkName = "-tableViewSelectionDidChange:"
             landmarkType = "5">
          </BreakpointContent>

@@ -38,7 +38,7 @@
     NSString *_letter;
     NSMutableDictionary *_nextLetters;
     BOOL _endOfWord;
-    
+
     // For searching
     LetterPosition _position;
     int _depth;
@@ -83,6 +83,9 @@
     NSMutableDictionary *_firstLetters;
     NSMutableArray *_solutions;
     NSMutableSet *_solutionWords;
+    
+    // For counting
+    uint32 _wordCount;
 }
 
 - (id) init
@@ -157,8 +160,8 @@
         
         WordLetter *nextLetter = [letter getWordLetterForLetter:key create:YES];
         if (nextLetter == nil) {
-            //NSLog(@"#Error: cannot add word");
-            return NO;
+            NSLog(@"#Error: cannot add word");
+            return -6;
         }
         
         // Done
@@ -180,9 +183,92 @@
     return 0;
 }
 
-- (void) removeWord:(NSString*)word
+- (BOOL) removeWord:(NSString*)word
 {
+    if (word.length < MIN_WORD_LENGTH) {
+        // Too short word
+        return NO;
+    }
+    if (word.length > MAX_WORD_LENGTH) {
+        // Too long word
+        return NO;
+    }
+
+    word = [word uppercaseString];
     
+    NSString *firstLetter = [word substringToIndex:1];
+    
+    // Get first letter
+    WordLetter *letter = [self getFirstLetter:firstLetter];
+    
+    if (letter == nil) {
+        NSLog(@"#Error: cannot get first letter");
+        return NO;
+    }
+    
+    int length = (int)word.length;
+    //const char *letterArray = [word cStringUsingEncoding:NSASCIIStringEncoding];
+    
+    for (int i = 1; i < length; i++) {
+        //char letterWord[2];
+        //letterWord[0] = letterArray[i];
+        //letterWord[1] = '\0';
+        
+        NSString *key = [word substringWithRange:NSMakeRange(i, 1)];
+        
+        WordLetter *nextLetter = [letter getWordLetterForLetter:key create:NO];
+        if (nextLetter == nil) {
+            // Word not found
+            return NO;
+        }
+        
+        // Done
+        if (i == length - 1) {
+            if (nextLetter.endOfWord) {
+                // This word was added, now remove
+                nextLetter.endOfWord = NO;
+                return YES;
+            } else {
+                // This word is not added
+                return NO;
+            }
+        }
+        else {
+            letter = nextLetter;
+        }
+    }
+    
+    return NO;
+}
+
+- (uint32) removeAllWords
+{
+    _wordCount = 0;
+        
+    // Get all words
+    NSArray *keys = [_firstLetters allKeys];
+    for (NSString *key in keys) {
+        WordLetter *letter = [_firstLetters objectForKey:key];
+        
+        [self recursiveWordLogFrom:letter withString:key addToArray:nil remove:YES];
+    }
+    
+    return _wordCount;
+}
+
+- (NSArray*) wordList
+{
+    NSMutableArray *array = [NSMutableArray array];
+    
+    // Get all words
+    NSArray *keys = [_firstLetters allKeys];
+    for (NSString *key in keys) {
+        WordLetter *letter = [_firstLetters objectForKey:key];
+        
+        [self recursiveWordLogFrom:letter withString:key addToArray:array remove:NO];
+    }
+    
+    return array;
 }
 
 - (void) logAllWords
@@ -191,21 +277,32 @@
     for (NSString *key in keys) {
         WordLetter *letter = [_firstLetters objectForKey:key];
         
-        [self recursiveWordLogFrom:letter withString:key];
+        [self recursiveWordLogFrom:letter withString:key addToArray:nil remove:NO];
     }
 }
 
-- (void) recursiveWordLogFrom:(WordLetter*)letter withString:(NSString*)string
+- (void) recursiveWordLogFrom:(WordLetter*)letter withString:(NSString*)string addToArray:(NSMutableArray*)array remove:(BOOL) remove
 {
     if (letter.endOfWord) {
-        NSLog(@"%@", string);
+        if (array == nil && !!! remove) {
+            // Normal logging
+            NSLog(@"%@", string);
+        } else if (array != nil){
+            // Array logging
+            [array addObject:string];
+        }
+        else {
+            // Remove word
+            letter.endOfWord = NO;
+        }
+        _wordCount ++;
     }
 
     NSArray *keys = [letter.nextLetters allKeys];
     for (NSString *key in keys) {
         WordLetter *nextLetter = [letter.nextLetters objectForKey:key];
         
-        [self recursiveWordLogFrom:nextLetter withString:[string stringByAppendingString:key]];
+        [self recursiveWordLogFrom:nextLetter withString:[string stringByAppendingString:key] addToArray:array remove:remove];
     }
 }
 

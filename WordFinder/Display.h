@@ -47,4 +47,8 @@
 - (IBAction)addWordSelected:(id)sender;
 - (IBAction)removeWordSelected:(id)sender;
 
+- (IBAction)openFileSelected:(id)sender;
+- (IBAction)clearWordListSelected:(id)sender;
+- (IBAction)saveToFileSelected:(id)sender;
+
 @end
