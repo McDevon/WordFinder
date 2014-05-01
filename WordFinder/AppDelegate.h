@@ -32,4 +32,6 @@
 
 @property (assign) IBOutlet NSWindow *window;
 
+-(void)threadOperation:(NSInvocationOperation*)operation;
+
 @end

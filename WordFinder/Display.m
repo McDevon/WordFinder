@@ -27,6 +27,7 @@
 //  SOFTWARE.
 
 #import "Display.h"
+#import "AppDelegate.h"
 
 #import "Puzzle.h"
 #import "WordDatabase.h"
@@ -41,6 +42,8 @@
     WordDatabase *_dataBase;
     NSMutableArray *_resultSolutions;
     NSMutableArray *_letterViews;
+    
+    NSString *_fileToBeSaved;
 }
 
 #pragma mark - Initialization -
@@ -81,8 +84,8 @@
     
     //NSLog(@"Default file path: %@", defaultFile);
     
-    // Load words from default file
-    [self saveWordsToFilePath:defaultFile];
+    // Save to default file in a separate thread
+    [self threadFileSavingToPath:defaultFile];
 }
 
 - (void)controlTextDidChange:(NSNotification *)notification {
@@ -207,11 +210,11 @@
     
     if (result == NSOKButton){
         NSURL *selectedFile = save.URL;
-        if ([self saveWordsToFilePath:[selectedFile path]]) {
-            _infoField.stringValue = [NSString stringWithFormat:@"Saved %@", [selectedFile lastPathComponent]];
-        } else {
-            _infoField.stringValue = [NSString stringWithFormat:@"Failed to save %@", [selectedFile lastPathComponent]];
-        }
+        
+        _fileToBeSaved = [selectedFile lastPathComponent];
+        
+        // Create a thread for file saving
+        [self threadFileSavingToPath:[selectedFile path]];
     }
 
 }
@@ -247,23 +250,40 @@
         view.backgroundColor = [NSColor whiteColor];
     }
     
+    NSUInteger length = solution.word.length;
+    
+    NSColor *firstColor = [NSColor colorWithRed:226.f/255.f green:128.f/255.f blue:122.f/255.f alpha:1.f];
+    NSColor *lastColor = [NSColor colorWithRed:138.f/255.f green:226.f/255.f blue:136.f/255.f alpha:1.f];
+    
+    /*float redChange = (lastColor.redComponent - firstColor.redComponent) / (float)length;
+    float greenChange = (lastColor.greenComponent - firstColor.greenComponent) / (float)length;
+    float blueChange = (lastColor.blueComponent - firstColor.blueComponent) / (float)length;
+    
+    float red = firstColor.redComponent;
+    float green = firstColor.greenComponent;
+    float blue = firstColor.blueComponent;*/
+    
     // Set colors for all positions
-    for (int i = 0; i < solution.word.length; i++) {
+    for (int i = 0; i < length; i++) {
         //int index = 4 * y + x;
         
         LetterPosition position = [solution positionOfLetterIndex:i];
         int index = 4 * position.y + position.x;
         
-        NSColor *bgColor;
+        NSColor *bgColor; //[NSColor colorWithRed:red green:green blue:blue alpha:1.0f];
+        
         if (i == 0) {
-            // First letter color
-            bgColor = [NSColor colorWithRed:226.f/255.f green:128.f/255.f blue:122.f/255.f alpha:1.f];
+            bgColor = firstColor;
         } else {
-            bgColor = [NSColor colorWithRed:138.f/255.f green:226.f/255.f blue:136.f/255.f alpha:1.f];
+            bgColor = lastColor;
         }
         
         LetterView *view = [_letterViews objectAtIndex:index];
         view.backgroundColor = bgColor;
+        
+        /*red += redChange;
+        green += greenChange;
+        blue += blueChange;*/
     }
 }
 
@@ -312,6 +332,35 @@
     _infoField.stringValue = [NSString stringWithFormat:@"Loaded %u words, rejected %u words.", loadedWords, rejectedWords];
 
     return YES;
+}
+
+- (void) threadFileSavingToPath:(NSString*) path
+{
+    NSInvocationOperation *op = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(fileSavingThreadForPath:) object:path];
+    AppDelegate *appDelegate = (AppDelegate *)[[NSApplication sharedApplication] delegate];
+    [appDelegate threadOperation:op];
+}
+
+- (void) fileSavingThreadForPath:(NSString*) path
+{
+    NSNumber *savingDone = [NSNumber numberWithBool:[self saveWordsToFilePath:path]];
+    // Notify main thread that saving is complete
+    
+    [self performSelectorOnMainThread:@selector(savingDone:) withObject:savingDone waitUntilDone:NO];
+    
+    // Thread end
+}
+
+- (void) savingDone:(id) success
+{
+    NSNumber *savingDone = (NSNumber*) success;
+    
+    if (savingDone) {
+        _infoField.stringValue = [NSString stringWithFormat:@"Saved %@", _fileToBeSaved];
+    } else {
+        _infoField.stringValue = [NSString stringWithFormat:@"Failed to save %@", _fileToBeSaved];
+    }
+    
 }
 
 - (BOOL) saveWordsToFilePath:(NSString*) path

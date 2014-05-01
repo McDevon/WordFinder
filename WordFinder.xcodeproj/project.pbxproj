@@ -496,6 +496,7 @@
 				4CBDE15519116C8A00653A04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4CBDE15619116C8A00653A04 /* Build configuration list for PBXNativeTarget "WordFinderTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +505,7 @@
 				4CBDE15819116C8A00653A04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

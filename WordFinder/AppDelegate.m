@@ -29,10 +29,29 @@
 #import "AppDelegate.h"
 
 @implementation AppDelegate
+{
+    NSOperationQueue *opQueue;                          // Method queue for "smart" threading
+}
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+    opQueue = [[NSOperationQueue alloc] init];
+}
+
+// Add new operation for GCD to thread
+-(void)threadOperation:(NSInvocationOperation *)operation
+{
+    [opQueue addOperation:operation];
+}
+
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender
+{
+    return YES;
+}
+
+- (void)applicationWillTerminate:(NSNotification *)notification
+{
+    [opQueue waitUntilAllOperationsAreFinished];
 }
 
 @end
