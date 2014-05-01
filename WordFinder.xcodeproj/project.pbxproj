@@ -1,0 +1,511 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4CBDE12619116C8900653A04 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CBDE12519116C8900653A04 /* Cocoa.framework */; };
+		4CBDE13019116C8900653A04 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CBDE12E19116C8900653A04 /* InfoPlist.strings */; };
+		4CBDE13219116C8900653A04 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDE13119116C8900653A04 /* main.m */; };
+		4CBDE13619116C8900653A04 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4CBDE13419116C8900653A04 /* Credits.rtf */; };
+		4CBDE13919116C8900653A04 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDE13819116C8900653A04 /* AppDelegate.m */; };
+		4CBDE13C19116C8900653A04 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CBDE13A19116C8900653A04 /* MainMenu.xib */; };
+		4CBDE13E19116C8900653A04 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CBDE13D19116C8900653A04 /* Images.xcassets */; };
+		4CBDE14519116C8A00653A04 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CBDE14419116C8900653A04 /* XCTest.framework */; };
+		4CBDE14619116C8A00653A04 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CBDE12519116C8900653A04 /* Cocoa.framework */; };
+		4CBDE14E19116C8A00653A04 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CBDE14C19116C8A00653A04 /* InfoPlist.strings */; };
+		4CBDE15019116C8A00653A04 /* WordFinderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDE14F19116C8A00653A04 /* WordFinderTests.m */; };
+		4CBDE15B191170F300653A04 /* Display.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDE15A191170F300653A04 /* Display.m */; };
+		4CBDE15E1911715200653A04 /* LetterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDE15D1911715200653A04 /* LetterView.m */; };
+		4CBDE1611911779900653A04 /* WordDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDE1601911779900653A04 /* WordDatabase.m */; };
+		4CBDE1641911798300653A04 /* Puzzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDE1631911798300653A04 /* Puzzle.m */; };
+		4CBDE167191181E600653A04 /* PuzzleSolution.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDE166191181E600653A04 /* PuzzleSolution.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4CBDE14719116C8A00653A04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4CBDE11A19116C8900653A04 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4CBDE12119116C8900653A04;
+			remoteInfo = WordFinder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4CBDE12219116C8900653A04 /* WordFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CBDE12519116C8900653A04 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		4CBDE12819116C8900653A04 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		4CBDE12919116C8900653A04 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		4CBDE12A19116C8900653A04 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4CBDE12D19116C8900653A04 /* WordFinder-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WordFinder-Info.plist"; sourceTree = "<group>"; };
+		4CBDE12F19116C8900653A04 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4CBDE13119116C8900653A04 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4CBDE13319116C8900653A04 /* WordFinder-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WordFinder-Prefix.pch"; sourceTree = "<group>"; };
+		4CBDE13519116C8900653A04 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		4CBDE13719116C8900653A04 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4CBDE13819116C8900653A04 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4CBDE13B19116C8900653A04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		4CBDE13D19116C8900653A04 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4CBDE14319116C8900653A04 /* WordFinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordFinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CBDE14419116C8900653A04 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		4CBDE14B19116C8A00653A04 /* WordFinderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WordFinderTests-Info.plist"; sourceTree = "<group>"; };
+		4CBDE14D19116C8A00653A04 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4CBDE14F19116C8A00653A04 /* WordFinderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WordFinderTests.m; sourceTree = "<group>"; };
+		4CBDE159191170F300653A04 /* Display.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Display.h; sourceTree = "<group>"; };
+		4CBDE15A191170F300653A04 /* Display.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Display.m; sourceTree = "<group>"; };
+		4CBDE15C1911715200653A04 /* LetterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetterView.h; sourceTree = "<group>"; };
+		4CBDE15D1911715200653A04 /* LetterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetterView.m; sourceTree = "<group>"; };
+		4CBDE15F1911779900653A04 /* WordDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordDatabase.h; sourceTree = "<group>"; };
+		4CBDE1601911779900653A04 /* WordDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordDatabase.m; sourceTree = "<group>"; };
+		4CBDE1621911798300653A04 /* Puzzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Puzzle.h; sourceTree = "<group>"; };
+		4CBDE1631911798300653A04 /* Puzzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Puzzle.m; sourceTree = "<group>"; };
+		4CBDE165191181E600653A04 /* PuzzleSolution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PuzzleSolution.h; sourceTree = "<group>"; };
+		4CBDE166191181E600653A04 /* PuzzleSolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PuzzleSolution.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4CBDE11F19116C8900653A04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CBDE12619116C8900653A04 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CBDE14019116C8900653A04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CBDE14619116C8A00653A04 /* Cocoa.framework in Frameworks */,
+				4CBDE14519116C8A00653A04 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4CBDE11919116C8900653A04 = {
+			isa = PBXGroup;
+			children = (
+				4CBDE12B19116C8900653A04 /* WordFinder */,
+				4CBDE14919116C8A00653A04 /* WordFinderTests */,
+				4CBDE12419116C8900653A04 /* Frameworks */,
+				4CBDE12319116C8900653A04 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4CBDE12319116C8900653A04 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4CBDE12219116C8900653A04 /* WordFinder.app */,
+				4CBDE14319116C8900653A04 /* WordFinderTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4CBDE12419116C8900653A04 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4CBDE12519116C8900653A04 /* Cocoa.framework */,
+				4CBDE14419116C8900653A04 /* XCTest.framework */,
+				4CBDE12719116C8900653A04 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4CBDE12719116C8900653A04 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4CBDE12819116C8900653A04 /* AppKit.framework */,
+				4CBDE12919116C8900653A04 /* CoreData.framework */,
+				4CBDE12A19116C8900653A04 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		4CBDE12B19116C8900653A04 /* WordFinder */ = {
+			isa = PBXGroup;
+			children = (
+				4CBDE13719116C8900653A04 /* AppDelegate.h */,
+				4CBDE13819116C8900653A04 /* AppDelegate.m */,
+				4CBDE159191170F300653A04 /* Display.h */,
+				4CBDE15A191170F300653A04 /* Display.m */,
+				4CBDE15C1911715200653A04 /* LetterView.h */,
+				4CBDE15D1911715200653A04 /* LetterView.m */,
+				4CBDE15F1911779900653A04 /* WordDatabase.h */,
+				4CBDE1601911779900653A04 /* WordDatabase.m */,
+				4CBDE1621911798300653A04 /* Puzzle.h */,
+				4CBDE1631911798300653A04 /* Puzzle.m */,
+				4CBDE165191181E600653A04 /* PuzzleSolution.h */,
+				4CBDE166191181E600653A04 /* PuzzleSolution.m */,
+				4CBDE13A19116C8900653A04 /* MainMenu.xib */,
+				4CBDE13D19116C8900653A04 /* Images.xcassets */,
+				4CBDE12C19116C8900653A04 /* Supporting Files */,
+			);
+			path = WordFinder;
+			sourceTree = "<group>";
+		};
+		4CBDE12C19116C8900653A04 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4CBDE12D19116C8900653A04 /* WordFinder-Info.plist */,
+				4CBDE12E19116C8900653A04 /* InfoPlist.strings */,
+				4CBDE13119116C8900653A04 /* main.m */,
+				4CBDE13319116C8900653A04 /* WordFinder-Prefix.pch */,
+				4CBDE13419116C8900653A04 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4CBDE14919116C8A00653A04 /* WordFinderTests */ = {
+			isa = PBXGroup;
+			children = (
+				4CBDE14F19116C8A00653A04 /* WordFinderTests.m */,
+				4CBDE14A19116C8A00653A04 /* Supporting Files */,
+			);
+			path = WordFinderTests;
+			sourceTree = "<group>";
+		};
+		4CBDE14A19116C8A00653A04 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4CBDE14B19116C8A00653A04 /* WordFinderTests-Info.plist */,
+				4CBDE14C19116C8A00653A04 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4CBDE12119116C8900653A04 /* WordFinder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CBDE15319116C8A00653A04 /* Build configuration list for PBXNativeTarget "WordFinder" */;
+			buildPhases = (
+				4CBDE11E19116C8900653A04 /* Sources */,
+				4CBDE11F19116C8900653A04 /* Frameworks */,
+				4CBDE12019116C8900653A04 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WordFinder;
+			productName = WordFinder;
+			productReference = 4CBDE12219116C8900653A04 /* WordFinder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4CBDE14219116C8900653A04 /* WordFinderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CBDE15619116C8A00653A04 /* Build configuration list for PBXNativeTarget "WordFinderTests" */;
+			buildPhases = (
+				4CBDE13F19116C8900653A04 /* Sources */,
+				4CBDE14019116C8900653A04 /* Frameworks */,
+				4CBDE14119116C8900653A04 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4CBDE14819116C8A00653A04 /* PBXTargetDependency */,
+			);
+			name = WordFinderTests;
+			productName = WordFinderTests;
+			productReference = 4CBDE14319116C8900653A04 /* WordFinderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4CBDE11A19116C8900653A04 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Jussi Enroos";
+				TargetAttributes = {
+					4CBDE14219116C8900653A04 = {
+						TestTargetID = 4CBDE12119116C8900653A04;
+					};
+				};
+			};
+			buildConfigurationList = 4CBDE11D19116C8900653A04 /* Build configuration list for PBXProject "WordFinder" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4CBDE11919116C8900653A04;
+			productRefGroup = 4CBDE12319116C8900653A04 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4CBDE12119116C8900653A04 /* WordFinder */,
+				4CBDE14219116C8900653A04 /* WordFinderTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4CBDE12019116C8900653A04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CBDE13019116C8900653A04 /* InfoPlist.strings in Resources */,
+				4CBDE13E19116C8900653A04 /* Images.xcassets in Resources */,
+				4CBDE13619116C8900653A04 /* Credits.rtf in Resources */,
+				4CBDE13C19116C8900653A04 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CBDE14119116C8900653A04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CBDE14E19116C8A00653A04 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4CBDE11E19116C8900653A04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CBDE13919116C8900653A04 /* AppDelegate.m in Sources */,
+				4CBDE13219116C8900653A04 /* main.m in Sources */,
+				4CBDE15E1911715200653A04 /* LetterView.m in Sources */,
+				4CBDE1641911798300653A04 /* Puzzle.m in Sources */,
+				4CBDE1611911779900653A04 /* WordDatabase.m in Sources */,
+				4CBDE167191181E600653A04 /* PuzzleSolution.m in Sources */,
+				4CBDE15B191170F300653A04 /* Display.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CBDE13F19116C8900653A04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CBDE15019116C8A00653A04 /* WordFinderTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4CBDE14819116C8A00653A04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4CBDE12119116C8900653A04 /* WordFinder */;
+			targetProxy = 4CBDE14719116C8A00653A04 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4CBDE12E19116C8900653A04 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CBDE12F19116C8900653A04 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4CBDE13419116C8900653A04 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CBDE13519116C8900653A04 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		4CBDE13A19116C8900653A04 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CBDE13B19116C8900653A04 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		4CBDE14C19116C8A00653A04 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CBDE14D19116C8A00653A04 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4CBDE15119116C8A00653A04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		4CBDE15219116C8A00653A04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		4CBDE15419116C8A00653A04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WordFinder/WordFinder-Prefix.pch";
+				INFOPLIST_FILE = "WordFinder/WordFinder-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4CBDE15519116C8A00653A04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WordFinder/WordFinder-Prefix.pch";
+				INFOPLIST_FILE = "WordFinder/WordFinder-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		4CBDE15719116C8A00653A04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WordFinder.app/Contents/MacOS/WordFinder";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WordFinder/WordFinder-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "WordFinderTests/WordFinderTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		4CBDE15819116C8A00653A04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WordFinder.app/Contents/MacOS/WordFinder";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WordFinder/WordFinder-Prefix.pch";
+				INFOPLIST_FILE = "WordFinderTests/WordFinderTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4CBDE11D19116C8900653A04 /* Build configuration list for PBXProject "WordFinder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CBDE15119116C8A00653A04 /* Debug */,
+				4CBDE15219116C8A00653A04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CBDE15319116C8A00653A04 /* Build configuration list for PBXNativeTarget "WordFinder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CBDE15419116C8A00653A04 /* Debug */,
+				4CBDE15519116C8A00653A04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4CBDE15619116C8A00653A04 /* Build configuration list for PBXNativeTarget "WordFinderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CBDE15719116C8A00653A04 /* Debug */,
+				4CBDE15819116C8A00653A04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4CBDE11A19116C8900653A04 /* Project object */;
+}
