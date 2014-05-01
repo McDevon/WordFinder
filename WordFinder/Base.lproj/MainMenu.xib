@@ -803,6 +803,9 @@
                     <constraint firstItem="Qoe-GI-0Ig" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="zSu-4b-P6J"/>
                 </constraints>
             </view>
+            <connections>
+                <outlet property="delegate" destination="arw-6S-rPu" id="WgA-D7-h2e"/>
+            </connections>
         </window>
         <viewController id="arw-6S-rPu" customClass="Display">
             <connections>

@@ -30,7 +30,7 @@
 #import "LetterView.h"
 
 
-@interface Display : NSViewController <NSTextViewDelegate, NSTableViewDataSource, NSTableViewDelegate>
+@interface Display : NSViewController <NSTextViewDelegate, NSTableViewDataSource, NSTableViewDelegate, NSWindowDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet LetterView *firstLetterView;

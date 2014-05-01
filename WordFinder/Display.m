@@ -59,32 +59,31 @@
         view = view.targetView;
     } while (view != _firstLetterView);
     
-    /*[_dataBase addWord:@"Kissa"];
-    [_dataBase addWord:@"Kala"];
-    [_dataBase addWord:@"Kaali"];
-    [_dataBase addWord:@"Ruoka"];
-    [_dataBase addWord:@"Ruokala"];
-    [_dataBase addWord:@"Teräs"];
-    [_dataBase addWord:@"Teräsmies"];*/
+    // Autoload save file from bundle
+    NSBundle* mainBundle = [NSBundle mainBundle];
     
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *defaultFile = [[mainBundle resourcePath] stringByAppendingPathComponent:@"database.txt"];
     
-    // Should find something
-    if (paths.count > 0) {
-        
-        NSString *path = [paths objectAtIndex:0];
-        path = [path stringByAppendingPathComponent:@"sanalista.txt"];
-        /*NSURL *url = [NSURL URLWithString:(NSString*)[paths objectAtIndex:0]];
-        url = [url URLByAppendingPathComponent:@"file.tst"];
-        NSError *error = nil;*/
-        
-        [self loadWordsFromFilePath:path];
-    }
+    NSLog(@"Default file path: %@", defaultFile);
     
-    //[_dataBase logAllWords];
+    // Load words from default file
+    [self loadWordsFromFilePath:defaultFile];
 }
 
 #pragma mark - Callbacks and button selectors -
+
+- (void)windowWillClose:(NSNotification *)notification
+{
+    // Save words before exiting
+    NSBundle* mainBundle = [NSBundle mainBundle];
+    
+    NSString *defaultFile = [[mainBundle resourcePath] stringByAppendingPathComponent:@"database.txt"];
+    
+    NSLog(@"Default file path: %@", defaultFile);
+    
+    // Load words from default file
+    [self saveWordsToFilePath:defaultFile];
+}
 
 - (void)controlTextDidChange:(NSNotification *)notification {
     
