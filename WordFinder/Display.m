@@ -64,7 +64,7 @@
     
     NSString *defaultFile = [[mainBundle resourcePath] stringByAppendingPathComponent:@"database.txt"];
     
-    NSLog(@"Default file path: %@", defaultFile);
+    //NSLog(@"Default file path: %@", defaultFile);
     
     // Load words from default file
     [self loadWordsFromFilePath:defaultFile];
@@ -79,7 +79,7 @@
     
     NSString *defaultFile = [[mainBundle resourcePath] stringByAppendingPathComponent:@"database.txt"];
     
-    NSLog(@"Default file path: %@", defaultFile);
+    //NSLog(@"Default file path: %@", defaultFile);
     
     // Load words from default file
     [self saveWordsToFilePath:defaultFile];
