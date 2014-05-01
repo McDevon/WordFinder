@@ -669,11 +669,11 @@
         <window title="WordFinder" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="486" height="383"/>
+            <rect key="contentRect" x="335" y="390" width="486" height="408"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
-            <value key="minSize" type="size" width="484" height="383"/>
+            <value key="minSize" type="size" width="486" height="408"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="486" height="383"/>
+                <rect key="frame" x="0.0" y="0.0" width="486" height="408"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qqa-Rp-bGL">
@@ -716,7 +716,7 @@
                         </connections>
                     </button>
                     <textField identifier="0" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zRC-CQ-mje" customClass="LetterView">
-                        <rect key="frame" x="20" y="303" width="60" height="60"/>
+                        <rect key="frame" x="20" y="328" width="60" height="60"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="5Ua-Kl-b5p"/>
@@ -733,7 +733,7 @@
                         </connections>
                     </textField>
                     <textField identifier="1" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7RX-lQ-Vmu" customClass="LetterView">
-                        <rect key="frame" x="100" y="303" width="60" height="60"/>
+                        <rect key="frame" x="100" y="328" width="60" height="60"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="60" id="Q3s-2o-dtO"/>
@@ -750,7 +750,7 @@
                         </connections>
                     </textField>
                     <textField identifier="2" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ipn-aO-zSC" customClass="LetterView">
-                        <rect key="frame" x="180" y="303" width="60" height="60"/>
+                        <rect key="frame" x="180" y="328" width="60" height="60"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="60" id="Y3d-7U-beR"/>
@@ -767,7 +767,7 @@
                         </connections>
                     </textField>
                     <textField identifier="3" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7VV-83-PVS" customClass="LetterView">
-                        <rect key="frame" x="260" y="303" width="60" height="60"/>
+                        <rect key="frame" x="260" y="328" width="60" height="60"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="60" id="JyR-4s-eL1"/>
@@ -784,7 +784,7 @@
                         </connections>
                     </textField>
                     <textField identifier="4" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Qoe-GI-0Ig" customClass="LetterView">
-                        <rect key="frame" x="20" y="223" width="60" height="60"/>
+                        <rect key="frame" x="20" y="248" width="60" height="60"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="a9W-MJ-rLa"/>
@@ -801,7 +801,7 @@
                         </connections>
                     </textField>
                     <textField identifier="5" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="x6o-qx-uzD" customClass="LetterView">
-                        <rect key="frame" x="100" y="223" width="60" height="60"/>
+                        <rect key="frame" x="100" y="248" width="60" height="60"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="HWP-GG-0di"/>
@@ -818,7 +818,7 @@
                         </connections>
                     </textField>
                     <textField identifier="6" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yjn-Zv-CWt" customClass="LetterView">
-                        <rect key="frame" x="180" y="223" width="60" height="60"/>
+                        <rect key="frame" x="180" y="248" width="60" height="60"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="60" id="RYl-60-TPR"/>
@@ -835,7 +835,7 @@
                         </connections>
                     </textField>
                     <textField identifier="7" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ImN-cy-sJd" customClass="LetterView">
-                        <rect key="frame" x="260" y="223" width="60" height="60"/>
+                        <rect key="frame" x="260" y="248" width="60" height="60"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="DwP-ac-xYU"/>
@@ -852,7 +852,7 @@
                         </connections>
                     </textField>
                     <textField identifier="8" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Lsl-bi-N5F" customClass="LetterView">
-                        <rect key="frame" x="20" y="143" width="60" height="60"/>
+                        <rect key="frame" x="20" y="168" width="60" height="60"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="60" id="bbD-ge-mQ5"/>
@@ -869,7 +869,7 @@
                         </connections>
                     </textField>
                     <textField identifier="9" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4ne-Ay-Mkz" customClass="LetterView">
-                        <rect key="frame" x="100" y="143" width="60" height="60"/>
+                        <rect key="frame" x="100" y="168" width="60" height="60"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="oqo-cL-W87"/>
@@ -886,7 +886,7 @@
                         </connections>
                     </textField>
                     <textField identifier="10" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IXR-k0-L9f" customClass="LetterView">
-                        <rect key="frame" x="180" y="143" width="60" height="60"/>
+                        <rect key="frame" x="180" y="168" width="60" height="60"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="F18-jt-FTX"/>
@@ -903,7 +903,7 @@
                         </connections>
                     </textField>
                     <textField identifier="11" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IoM-u6-rpQ" customClass="LetterView">
-                        <rect key="frame" x="260" y="143" width="60" height="60"/>
+                        <rect key="frame" x="260" y="168" width="60" height="60"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="Cht-K8-Mi3"/>
@@ -920,7 +920,7 @@
                         </connections>
                     </textField>
                     <textField identifier="12" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mwS-dy-Zbn" customClass="LetterView">
-                        <rect key="frame" x="20" y="63" width="60" height="60"/>
+                        <rect key="frame" x="20" y="88" width="60" height="60"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="aZk-8T-zrh"/>
@@ -937,7 +937,7 @@
                         </connections>
                     </textField>
                     <textField identifier="13" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PyZ-X7-qPI" customClass="LetterView">
-                        <rect key="frame" x="100" y="63" width="60" height="60"/>
+                        <rect key="frame" x="100" y="88" width="60" height="60"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="60" id="GSv-RE-S1S"/>
@@ -954,7 +954,7 @@
                         </connections>
                     </textField>
                     <textField identifier="14" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Htf-NL-6QI" customClass="LetterView">
-                        <rect key="frame" x="180" y="63" width="60" height="60"/>
+                        <rect key="frame" x="180" y="88" width="60" height="60"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="1Ez-Yb-yQB"/>
@@ -971,7 +971,7 @@
                         </connections>
                     </textField>
                     <textField identifier="15" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ld9-V6-xa1" customClass="LetterView">
-                        <rect key="frame" x="260" y="63" width="60" height="60"/>
+                        <rect key="frame" x="260" y="88" width="60" height="60"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="5Ok-6w-ZCg"/>
@@ -988,7 +988,7 @@
                         </connections>
                     </textField>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CND-WP-P2c">
-                        <rect key="frame" x="362" y="335" width="114" height="32"/>
+                        <rect key="frame" x="362" y="360" width="114" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Find Words!" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qE1-LV-bss">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -999,14 +999,14 @@
                         </connections>
                     </button>
                     <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FeT-WS-GdR">
-                        <rect key="frame" x="341" y="88" width="129" height="237"/>
+                        <rect key="frame" x="341" y="88" width="129" height="262"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <clipView key="contentView" id="atX-mn-467">
-                            <rect key="frame" x="1" y="17" width="127" height="219"/>
+                            <rect key="frame" x="1" y="17" width="127" height="244"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="Vf0-nf-PdH" id="heW-aR-CXc">
-                                    <rect key="frame" x="0.0" y="0.0" width="127" height="219"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="127" height="244"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1038,7 +1038,7 @@
                             <rect key="frame" x="-7" y="2" width="0.0" height="15"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="37" horizontal="NO" id="pR3-sN-9ds">
+                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="pR3-sN-9ds">
                             <rect key="frame" x="-14" y="9" width="15" height="0.0"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
@@ -1047,6 +1047,15 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </tableHeaderView>
                     </scrollView>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QYu-1R-4Fi">
+                        <rect key="frame" x="18" y="56" width="361" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="TY3-vi-mkR">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="qqa-Rp-bGL" secondAttribute="bottom" constant="21" id="2Qw-5x-TKb"/>
@@ -1104,6 +1113,7 @@
         <viewController id="arw-6S-rPu" customClass="Display">
             <connections>
                 <outlet property="firstLetterView" destination="zRC-CQ-mje" id="Y0Y-b0-ft9"/>
+                <outlet property="infoField" destination="QYu-1R-4Fi" id="8mL-Ab-03r"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="ktl-co-lCu"/>
                 <outlet property="wordField" destination="An3-2p-xUk" id="iyO-U7-vEJ"/>
                 <outlet property="wordTable" destination="heW-aR-CXc" id="KBD-2y-whV"/>

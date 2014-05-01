@@ -3,8 +3,28 @@
 //  WordFinder
 //
 //  Created by Jussi Enroos on 30.4.2014.
-//  Copyright (c) 2014 Jussi Enroos. All rights reserved.
 //
+//  The MIT License (MIT)
+//
+//  Copyright (c) 2014 Jussi Enroos
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
 
 #import "Display.h"
 
@@ -114,7 +134,11 @@
 
 - (IBAction)addWordSelected:(id)sender
 {
-    [_dataBase addWord:[_wordField stringValue]];
+    if ([_dataBase addWord:[_wordField stringValue]]) {
+        _infoField.stringValue = [NSString stringWithFormat:@"Added word %@", _wordField.stringValue];
+    } else {
+        _infoField.stringValue = [NSString stringWithFormat:@"Could not add word %@", _wordField.stringValue];
+    }
 }
 
 - (IBAction)removeWordSelected:(id)sender
@@ -184,6 +208,8 @@
     
     // Copy bytes
     uint32 length = (uint32)[fileData length];
+    uint32 loadedWords = 0;
+    uint32 rejectedWords = 0;
     
     const char *bytes = [fileData bytes];
     
@@ -199,11 +225,17 @@
             word[i - wordStart] = '\0';
             
             NSString *string = [NSString stringWithUTF8String:word];
-            [_dataBase addWord:string];
+            if ([_dataBase addWord:string]) {
+                loadedWords++;
+            } else {
+                rejectedWords++;
+            }
             wordStart = i+1;
         }
         
     }
+    
+    _infoField.stringValue = [NSString stringWithFormat:@"Loaded %u words, rejected %u words.", loadedWords, rejectedWords];
 
     return YES;
 }
