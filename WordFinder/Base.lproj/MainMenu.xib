@@ -697,8 +697,11 @@
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mwq-OC-7SR">
-                        <rect key="frame" x="384" y="47" width="92" height="32"/>
+                        <rect key="frame" x="349" y="47" width="127" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="115" id="ObI-3N-tnd"/>
+                        </constraints>
                         <buttonCell key="cell" type="push" title="Add File" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6ap-US-Kq2">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -1047,8 +1050,8 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </tableHeaderView>
                     </scrollView>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QYu-1R-4Fi">
-                        <rect key="frame" x="18" y="56" width="361" height="17"/>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QYu-1R-4Fi">
+                        <rect key="frame" x="18" y="56" width="323" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="TY3-vi-mkR">
                             <font key="font" metaFont="system"/>
@@ -1060,6 +1063,8 @@
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="qqa-Rp-bGL" secondAttribute="bottom" constant="21" id="2Qw-5x-TKb"/>
                     <constraint firstItem="cJX-7z-Abi" firstAttribute="top" secondItem="mwq-OC-7SR" secondAttribute="bottom" constant="12" id="3O2-qH-nQX"/>
+                    <constraint firstItem="mwq-OC-7SR" firstAttribute="leading" secondItem="QYu-1R-4Fi" secondAttribute="trailing" constant="13" id="4Iq-2D-11v"/>
+                    <constraint firstItem="QYu-1R-4Fi" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="6Bo-v9-NUd"/>
                     <constraint firstItem="ld9-V6-xa1" firstAttribute="leading" secondItem="Htf-NL-6QI" secondAttribute="trailing" constant="20" id="6cP-5z-AEA"/>
                     <constraint firstItem="mwS-dy-Zbn" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="7g6-hX-XRV"/>
                     <constraint firstItem="zRC-CQ-mje" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" id="8Dt-KD-ooW"/>
@@ -1070,6 +1075,7 @@
                     <constraint firstAttribute="trailing" secondItem="mwq-OC-7SR" secondAttribute="trailing" constant="16" id="HwO-PM-axb"/>
                     <constraint firstItem="IXR-k0-L9f" firstAttribute="leading" secondItem="4ne-Ay-Mkz" secondAttribute="trailing" constant="20" id="Jb1-Xg-H4k"/>
                     <constraint firstItem="Ipn-aO-zSC" firstAttribute="leading" secondItem="7RX-lQ-Vmu" secondAttribute="trailing" constant="20" id="K24-1P-kWu"/>
+                    <constraint firstItem="cJX-7z-Abi" firstAttribute="top" secondItem="QYu-1R-4Fi" secondAttribute="bottom" constant="14" id="K31-1m-iHQ"/>
                     <constraint firstItem="ld9-V6-xa1" firstAttribute="top" secondItem="IoM-u6-rpQ" secondAttribute="bottom" constant="20" id="K7X-14-YTx"/>
                     <constraint firstItem="An3-2p-xUk" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="MLk-nQ-9dn"/>
                     <constraint firstAttribute="trailing" secondItem="cJX-7z-Abi" secondAttribute="trailing" constant="16" id="MqF-in-vc3"/>

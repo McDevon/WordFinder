@@ -130,14 +130,25 @@
     [_resultSolutions sortUsingSelector:@selector(compareWordLengths:)];
     
     [_wordTable reloadData];
+    
+    _infoField.stringValue = [NSString stringWithFormat:@"Found %lu words", (unsigned long)_resultSolutions.count];
 }
 
 - (IBAction)addWordSelected:(id)sender
 {
-    if ([_dataBase addWord:[_wordField stringValue]]) {
-        _infoField.stringValue = [NSString stringWithFormat:@"Added word %@", _wordField.stringValue];
-    } else {
-        _infoField.stringValue = [NSString stringWithFormat:@"Could not add word %@", _wordField.stringValue];
+    int retVal = [_dataBase addWord:[_wordField stringValue]];
+    if (retVal == 0) {
+        _infoField.stringValue = [NSString stringWithFormat:@"Added word '%@'", _wordField.stringValue];
+    } else if (retVal == -1){
+        _infoField.stringValue = [NSString stringWithFormat:@"Could not add word '%@', word cannot start with a dash", _wordField.stringValue];
+    } else if (retVal == -2){
+        _infoField.stringValue = [NSString stringWithFormat:@"Could not add word '%@'", _wordField.stringValue];
+    } else if (retVal == -3){
+        _infoField.stringValue = [NSString stringWithFormat:@"Could not add word '%@', word already added", _wordField.stringValue];
+    } else if (retVal == -4){
+        _infoField.stringValue = [NSString stringWithFormat:@"Could not add word '%@', word too short", _wordField.stringValue];
+    } else if (retVal == -5){
+        _infoField.stringValue = [NSString stringWithFormat:@"Could not add word '%@', word too long", _wordField.stringValue];
     }
 }
 
@@ -168,7 +179,7 @@
     PuzzleSolution *solution = [_resultSolutions objectAtIndex:tableView.selectedRow];
     //NSString *string = [_resultSolutions objectAtIndex:tableView.selectedRow];
     
-    NSLog(@"Selected: %@", solution.word);
+    //NSLog(@"Selected: %@", solution.word);
     
     // Clear all letter view bg colors
     for (LetterView *view in _letterViews) {
@@ -225,7 +236,7 @@
             word[i - wordStart] = '\0';
             
             NSString *string = [NSString stringWithUTF8String:word];
-            if ([_dataBase addWord:string]) {
+            if ([_dataBase addWord:string] == 0) {
                 loadedWords++;
             } else {
                 rejectedWords++;

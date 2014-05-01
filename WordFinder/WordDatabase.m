@@ -29,6 +29,9 @@
 #import "WordDatabase.h"
 #import "Puzzle.h"
 
+#define MIN_WORD_LENGTH 3
+#define MAX_WORD_LENGTH 16
+
 @implementation WordLetter
 {
     //char _letter;
@@ -113,11 +116,15 @@
     return letterData;
 }
 
-- (BOOL) addWord:(NSString*)word
+- (int) addWord:(NSString*)word
 {
-    if (word.length < 3) {
-        //NSLog(@"#Error: cannot add word %@, too short", word);
-        return NO;
+    if (word.length < MIN_WORD_LENGTH) {
+        // Too short word
+        return -4;
+    }
+    if (word.length > MAX_WORD_LENGTH) {
+        // Too long word
+        return -5;
     }
     
     word = [word uppercaseString];
@@ -126,7 +133,7 @@
     
     if ([firstLetter isEqualToString:@"-"]) {
         //NSLog(@"#Warning: cannot add word %@, starts with a dash", word);
-        return NO;
+        return -1;
     }
     
     // Get first letter
@@ -134,7 +141,7 @@
     
     if (letter == nil) {
         NSLog(@"#Error: cannot get first letter");
-        return NO;
+        return -2;
     }
     
     //int index = 1;
@@ -156,7 +163,13 @@
         
         // Done
         if (i == length - 1) {
-            nextLetter.endOfWord = YES;
+            if (nextLetter.endOfWord) {
+                // This word already added
+                return -3;
+            } else {
+                // Add word
+                nextLetter.endOfWord = YES;
+            }
             //NSLog(@"Word added: %@", word);
         }
         else {
@@ -164,7 +177,7 @@
         }
     }
     
-    return YES;
+    return 0;
 }
 
 - (void) removeWord:(NSString*)word
