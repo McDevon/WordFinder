@@ -255,6 +255,7 @@
     NSColor *firstColor = [NSColor colorWithRed:226.f/255.f green:128.f/255.f blue:122.f/255.f alpha:1.f];
     NSColor *lastColor = [NSColor colorWithRed:138.f/255.f green:226.f/255.f blue:136.f/255.f alpha:1.f];
     
+    // Gradient from one color to another (does not really look good or clear)
     /*float redChange = (lastColor.redComponent - firstColor.redComponent) / (float)length;
     float greenChange = (lastColor.greenComponent - firstColor.greenComponent) / (float)length;
     float blueChange = (lastColor.blueComponent - firstColor.blueComponent) / (float)length;
