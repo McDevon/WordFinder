@@ -31,6 +31,7 @@
 
 @implementation Puzzle
 {
+    // Letters in puzzle. SolutionLetter objects, one for each in the puzzle string
     NSMutableArray *_firstLetters;
     
     NSString *_string;
@@ -81,7 +82,6 @@
                     }
                 }
             }
-
         }
         
     }

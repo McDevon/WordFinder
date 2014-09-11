@@ -108,9 +108,6 @@
     if (letterData == nil) {
         letterData = [[WordLetter alloc] init];
         
-        //const char *data = [letter cStringUsingEncoding:NSASCIIStringEncoding];
-        //letterData.letter = data[0];
-        
         letterData.letter = letter;
         
         [_firstLetters setObject:letterData forKey:letter];
@@ -149,12 +146,8 @@
     
     //int index = 1;
     int length = (int)word.length;
-    //const char *letterArray = [word cStringUsingEncoding:NSASCIIStringEncoding];
     
     for (int i = 1; i < length; i++) {
-        //char letterWord[2];
-        //letterWord[0] = letterArray[i];
-        //letterWord[1] = '\0';
         
         NSString *key = [word substringWithRange:NSMakeRange(i, 1)];
         
@@ -207,12 +200,8 @@
     }
     
     int length = (int)word.length;
-    //const char *letterArray = [word cStringUsingEncoding:NSASCIIStringEncoding];
     
     for (int i = 1; i < length; i++) {
-        //char letterWord[2];
-        //letterWord[0] = letterArray[i];
-        //letterWord[1] = '\0';
         
         NSString *key = [word substringWithRange:NSMakeRange(i, 1)];
         
