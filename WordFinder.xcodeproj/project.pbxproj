@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C96C1571912C4C5008E3BEF /* PuzzleCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C96C1561912C4C5008E3BEF /* PuzzleCreator.m */; };
 		4CBDE12619116C8900653A04 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CBDE12519116C8900653A04 /* Cocoa.framework */; };
 		4CBDE13019116C8900653A04 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CBDE12E19116C8900653A04 /* InfoPlist.strings */; };
 		4CBDE13219116C8900653A04 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDE13119116C8900653A04 /* main.m */; };
@@ -16,8 +17,6 @@
 		4CBDE13E19116C8900653A04 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CBDE13D19116C8900653A04 /* Images.xcassets */; };
 		4CBDE14519116C8A00653A04 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CBDE14419116C8900653A04 /* XCTest.framework */; };
 		4CBDE14619116C8A00653A04 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CBDE12519116C8900653A04 /* Cocoa.framework */; };
-		4CBDE14E19116C8A00653A04 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CBDE14C19116C8A00653A04 /* InfoPlist.strings */; };
-		4CBDE15019116C8A00653A04 /* WordFinderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDE14F19116C8A00653A04 /* WordFinderTests.m */; };
 		4CBDE15B191170F300653A04 /* Display.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDE15A191170F300653A04 /* Display.m */; };
 		4CBDE15E1911715200653A04 /* LetterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDE15D1911715200653A04 /* LetterView.m */; };
 		4CBDE1611911779900653A04 /* WordDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDE1601911779900653A04 /* WordDatabase.m */; };
@@ -36,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C96C1551912C4C5008E3BEF /* PuzzleCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PuzzleCreator.h; sourceTree = "<group>"; };
+		4C96C1561912C4C5008E3BEF /* PuzzleCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PuzzleCreator.m; sourceTree = "<group>"; };
 		4CBDE12219116C8900653A04 /* WordFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CBDE12519116C8900653A04 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		4CBDE12819116C8900653A04 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -52,9 +53,6 @@
 		4CBDE13D19116C8900653A04 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4CBDE14319116C8900653A04 /* WordFinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordFinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CBDE14419116C8900653A04 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		4CBDE14B19116C8A00653A04 /* WordFinderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WordFinderTests-Info.plist"; sourceTree = "<group>"; };
-		4CBDE14D19116C8A00653A04 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		4CBDE14F19116C8A00653A04 /* WordFinderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WordFinderTests.m; sourceTree = "<group>"; };
 		4CBDE159191170F300653A04 /* Display.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Display.h; sourceTree = "<group>"; };
 		4CBDE15A191170F300653A04 /* Display.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Display.m; sourceTree = "<group>"; };
 		4CBDE15C1911715200653A04 /* LetterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetterView.h; sourceTree = "<group>"; };
@@ -92,7 +90,6 @@
 			isa = PBXGroup;
 			children = (
 				4CBDE12B19116C8900653A04 /* WordFinder */,
-				4CBDE14919116C8A00653A04 /* WordFinderTests */,
 				4CBDE12419116C8900653A04 /* Frameworks */,
 				4CBDE12319116C8900653A04 /* Products */,
 			);
@@ -138,6 +135,8 @@
 				4CBDE15D1911715200653A04 /* LetterView.m */,
 				4CBDE15F1911779900653A04 /* WordDatabase.h */,
 				4CBDE1601911779900653A04 /* WordDatabase.m */,
+				4C96C1551912C4C5008E3BEF /* PuzzleCreator.h */,
+				4C96C1561912C4C5008E3BEF /* PuzzleCreator.m */,
 				4CBDE1621911798300653A04 /* Puzzle.h */,
 				4CBDE1631911798300653A04 /* Puzzle.m */,
 				4CBDE165191181E600653A04 /* PuzzleSolution.h */,
@@ -157,24 +156,6 @@
 				4CBDE13119116C8900653A04 /* main.m */,
 				4CBDE13319116C8900653A04 /* WordFinder-Prefix.pch */,
 				4CBDE13419116C8900653A04 /* Credits.rtf */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		4CBDE14919116C8A00653A04 /* WordFinderTests */ = {
-			isa = PBXGroup;
-			children = (
-				4CBDE14F19116C8A00653A04 /* WordFinderTests.m */,
-				4CBDE14A19116C8A00653A04 /* Supporting Files */,
-			);
-			path = WordFinderTests;
-			sourceTree = "<group>";
-		};
-		4CBDE14A19116C8A00653A04 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				4CBDE14B19116C8A00653A04 /* WordFinderTests-Info.plist */,
-				4CBDE14C19116C8A00653A04 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -266,7 +247,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CBDE14E19116C8A00653A04 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +261,7 @@
 				4CBDE13219116C8900653A04 /* main.m in Sources */,
 				4CBDE15E1911715200653A04 /* LetterView.m in Sources */,
 				4CBDE1641911798300653A04 /* Puzzle.m in Sources */,
+				4C96C1571912C4C5008E3BEF /* PuzzleCreator.m in Sources */,
 				4CBDE1611911779900653A04 /* WordDatabase.m in Sources */,
 				4CBDE167191181E600653A04 /* PuzzleSolution.m in Sources */,
 				4CBDE15B191170F300653A04 /* Display.m in Sources */,
@@ -291,7 +272,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CBDE15019116C8A00653A04 /* WordFinderTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,14 +308,6 @@
 				4CBDE13B19116C8900653A04 /* Base */,
 			);
 			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-		4CBDE14C19116C8A00653A04 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4CBDE14D19116C8A00653A04 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -1,8 +1,8 @@
 //
-//  WordDatabase.h
+//  PuzzleCreator.h
 //  WordFinder
 //
-//  Created by Jussi Enroos on 30.4.2014.
+//  Created by Jussi Enroos on 1.5.2014.
 //
 //  The MIT License (MIT)
 //
@@ -27,36 +27,11 @@
 //  SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import "PuzzleSolution.h"
 
-@class Puzzle;
+@interface PuzzleCreator : NSObject
 
-@interface WordLetter : NSObject
-
-//@property char letter;
-@property (copy) NSString *letter;
-@property (retain) NSMutableDictionary *nextLetters;
-@property BOOL endOfWord;
-
-@property LetterPosition position;
-@property int depth;
-@property BOOL used;
-
-- (WordLetter*) getWordLetterForLetter:(NSString*)letter create:(BOOL)create;
-
-@end
-
-@interface WordDatabase : NSObject
-
-- (int) addWord:(NSString*)word;
-- (BOOL) removeWord:(NSString*)word;
-
-- (NSArray*) solutionsForPuzzle:(Puzzle*)puzzle;
-
-- (NSArray*) wordList;
-
-- (uint32) removeAllWords;
-
-- (void) logAllWords;
+// Creator has a separate database for creating puzzles
+- (BOOL) addWordToDatabase:(NSString*) word;
+- (uint32) addWordListToDatabase:(NSArray*) wordList;
 
 @end

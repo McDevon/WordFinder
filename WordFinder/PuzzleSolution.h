@@ -43,7 +43,7 @@ static inline LetterPosition lpm(int x, int y)
 @interface SolutionLetter : NSObject
 
 //@property char letter;
-@property NSString *letter;
+@property (copy) NSString *letter;
 @property (retain) NSMutableArray *nextLetters;
 
 @property LetterPosition position;
