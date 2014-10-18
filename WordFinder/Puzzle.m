@@ -31,10 +31,10 @@
 
 @implementation Puzzle
 {
+    // Letters in puzzle. SolutionLetter objects, one for each in the puzzle string
     NSMutableArray *_firstLetters;
     
     NSString *_string;
-    //char *_letters;
     int _width;
     int _height;
     int _length;
@@ -49,22 +49,10 @@
 {
     if (self = [super init]) {
         _string = string;
-        //_letters = calloc(sizeof(char), width * height);
+
         _width = width;
         _height = height;
         _length = width * height;
-        
-        /*const char *word = [string UTF8String];
-        
-        // strcpy
-        unsigned int i = 0;
-        unsigned int len = (unsigned int)string.length;
-        while (i < width * height && i < len) {
-            _letters[i] = word[i];
-            i++;
-        }
-        _letters[i] = '\0';
-        */
         
         // Create first letter list
         _firstLetters = [[NSMutableArray alloc] init];
@@ -94,24 +82,12 @@
                     }
                 }
             }
-
         }
         
     }
     
     return self;
 }
-
-/*- (char) letterAtX:(int)x y:(int)y
-{
-    int index = _width * y + x;
-    
-    if (_letters == NULL || index >= _length) {
-        return 0;
-    }
-    
-    return _letters[index];
-}*/
 
 - (NSString*) stringAtX:(int)x y:(int)y
 {
@@ -122,14 +98,6 @@
     }
     
     return [_string substringWithRange:NSMakeRange(index, 1)];
-}
-
-- (void) dealloc
-{
-    /*if (_letters != NULL) {
-        free(_letters);
-        _letters = NULL;
-    }*/
 }
 
 @end

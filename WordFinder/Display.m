@@ -97,13 +97,30 @@
     
     LetterView *textField = [notification object];
     
+    NSInteger caretPosition = [[_window fieldEditor:YES forObject:textField] selectedRange].location;
+    
+    //NSLog(@"Caret position: %ld", caretPosition);
+    
     NSString *currentString = [textField stringValue];
-    NSString *finalString = [[currentString substringFromIndex:currentString.length - 1] uppercaseString];
+    NSString *finalString;
+    
+    // Always take the latest given character, no matter where the caret is
+    if (currentString.length <= 0) {
+        textField.stringValue = @"";
+        
+        // Do not move to the next text field when one was erased
+        return;
+    }
+    else if (caretPosition > 1) {
+        finalString = [[currentString substringFromIndex:currentString.length - 1] uppercaseString];
+    }
+    else {
+        finalString = [[currentString substringToIndex:1] uppercaseString];
+    }
     
     textField.stringValue = finalString;
     
     [_window makeFirstResponder:textField.targetView];
-    //[self.view.window makeFirstResponder:textField.targetView];
 }
 
 -(IBAction)findWordsSelected:(id)sender
@@ -135,6 +152,7 @@
     [_resultSolutions sortUsingSelector:@selector(compareWordLengths:)];
     
     [_wordTable reloadData];
+    [_window makeFirstResponder:_wordTable];
     
     _infoField.stringValue = [NSString stringWithFormat:@"Found %lu words", (unsigned long)_resultSolutions.count];
 }
@@ -240,8 +258,13 @@
 - (void)tableViewSelectionDidChange:(NSNotification *)notification
 {
     NSTableView *tableView = [notification object];
+    
+    if (tableView.selectedRow < 0) {
+        // More than one row selected, do nothing
+        return;
+    }
+    
     PuzzleSolution *solution = [_resultSolutions objectAtIndex:tableView.selectedRow];
-    //NSString *string = [_resultSolutions objectAtIndex:tableView.selectedRow];
     
     //NSLog(@"Selected: %@", solution.word);
     
@@ -255,6 +278,7 @@
     NSColor *firstColor = [NSColor colorWithRed:226.f/255.f green:128.f/255.f blue:122.f/255.f alpha:1.f];
     NSColor *lastColor = [NSColor colorWithRed:138.f/255.f green:226.f/255.f blue:136.f/255.f alpha:1.f];
     
+    // Gradient from one color to another (does not really look good or clear)
     /*float redChange = (lastColor.redComponent - firstColor.redComponent) / (float)length;
     float greenChange = (lastColor.greenComponent - firstColor.greenComponent) / (float)length;
     float blueChange = (lastColor.blueComponent - firstColor.blueComponent) / (float)length;
