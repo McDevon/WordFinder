@@ -30,6 +30,7 @@
 
 @interface Puzzle : NSObject
 
+// Letters in puzzle. SolutionLetter objects, one for each in the puzzle string
 @property (retain) NSMutableArray *firstLetters;
 
 + (instancetype) puzzleWithString:(NSString*)string width:(int)width height:(int)height;

@@ -33,17 +33,6 @@
 #define MAX_WORD_LENGTH 16
 
 @implementation WordLetter
-{
-    //char _letter;
-    NSString *_letter;
-    NSMutableDictionary *_nextLetters;
-    BOOL _endOfWord;
-
-    // For searching
-    LetterPosition _position;
-    int _depth;
-    BOOL _used;
-}
 
 - (WordLetter*) getWordLetterForLetter:(NSString*)letter create:(BOOL)create
 {

@@ -38,6 +38,7 @@
 @property (retain) NSMutableDictionary *nextLetters;
 @property BOOL endOfWord;
 
+// For searching
 @property LetterPosition position;
 @property int depth;
 @property BOOL used;

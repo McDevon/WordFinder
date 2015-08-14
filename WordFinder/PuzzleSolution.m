@@ -29,16 +29,6 @@
 #import "PuzzleSolution.h"
 
 @implementation SolutionLetter
-{
-    //char _letter;
-    NSString *_letter;
-    NSMutableArray *_nextLetters;
-    
-    // For searching
-    LetterPosition _position;
-    int _depth;
-    BOOL _used;
-}
 
 - (id) init
 {

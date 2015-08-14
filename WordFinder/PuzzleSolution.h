@@ -46,6 +46,7 @@ static inline LetterPosition lpm(int x, int y)
 @property (copy) NSString *letter;
 @property (retain) NSMutableArray *nextLetters;
 
+// For searching
 @property LetterPosition position;
 @property int depth;
 @property BOOL used;
